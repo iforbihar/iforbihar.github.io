@@ -1,1 +1,78 @@
-I For Bihar
+<!DOCTYPE html>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+
+var quote = "";
+var author = "";
+function getQuote(){
+	var rand = Math.floor(Math.random()*1000);
+	var request = "http://quotes.stormconsultancy.co.uk/random.json?callback=respond" + rand;	
+	console.log(request);
+	$.ajax({
+  		dataType: "jsonp",
+  		url: request,
+  		data: "",	
+  		success: function (jsonp) {
+  			console.log(jsonp);
+  			quote = '"' + jsonp.quote + '"';
+			author = "--" + jsonp.author;
+			$(".quote").html(quote);
+			$(".author").html(author);			
+			$(".tweet").attr({
+				href: 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('"' + quote + '" ' + author)
+				});
+			$(".page").css({
+   			backgroundImage: 'url(https://placem.at/things?random=' + Math.floor(Math.random()*1000) + ')'		
+  			});
+		}});
+}		
+$(document).ready(function() {
+	getQuote();
+	$("#getQuote").on("click", function() {
+		getQuote();
+	});	
+});
+</script>
+<body>
+    <div id="getQuote">getQuote</div>
+   <div class="quote"></div>
+    <div class="author"></div>
+    <div class="tweet"></div>
+
+<div w3-include-html="h1.html"></div> 
+<div w3-include-html="content.html"></div> 
+
+<script>
+includeHTML();
+</script>
+
+</body>
+</html>
