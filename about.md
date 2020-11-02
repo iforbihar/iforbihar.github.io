@@ -31,14 +31,14 @@ function includeHTML() {
   }
 };
 </script>
-<title>This is home page </title>
+<title>This is About page </title>
 </head>
 <body>
     <!-- <div id="getQuote">getQuote</div> -->
 <div class="main">  
 
 <div w3-include-html="header.html"></div> 
-<div w3-include-html="content.html"></div> 
+<div class="content">This is about us page content </div> 
 <div w3-include-html="footer.html"></div> 
 
 <script>
