@@ -4,10 +4,10 @@
     <title>I For Bihar</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Nov 2020 00:08:25 +0530</pubDate>
-    <lastBuildDate>Tue, 03 Nov 2020 00:08:25 +0530</lastBuildDate>
+    <link>https://iforbihar.github.io/</link>
+    <atom:link href="https://iforbihar.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 03 Nov 2020 20:32:59 +0530</pubDate>
+    <lastBuildDate>Tue, 03 Nov 2020 20:32:59 +0530</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Mon, 02 Nov 2020 23:40:55 +0530</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2020/11/02/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2020/11/02/welcome-to-jekyll.html</guid>
+        <link>https://iforbihar.github.io/jekyll/update/2020/11/02/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">https://iforbihar.github.io/jekyll/update/2020/11/02/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
